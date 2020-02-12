@@ -9,10 +9,9 @@ RUN apk update \
 	&& unzip AriaNg-1.1.4.zip -d aria-ng \
 	&& rm -rf AriaNg-1.1.4.zip
 
-COPY init.sh /aria2/init.sh
+COPY init.sh /init.sh
 
 WORKDIR /
-VOLUME ["/aria2/conf", "/aria2/downloads"]
 EXPOSE 80
 
-CMD ["/aria2/init.sh"]
+CMD ["/init.sh"]
